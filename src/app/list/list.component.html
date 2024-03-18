@@ -1,0 +1,12 @@
+<h2>{{list.title}}</h2>
+<div class="list-container">
+    <ul>
+        @for (task of list.tasks; track task.id) {
+            <li>
+                <app-task [task]="task"></app-task>
+            </li>
+            } @empty {
+            <li>Empty task</li>
+            }
+    </ul>
+</div>

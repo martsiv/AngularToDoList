@@ -1,0 +1,41 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+h2,
+h3,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  margin: 2em;
+}
+
+.list-container ul li:nth-child(odd) {
+  background-color: rgb(166, 204, 217);
+}
+
+.list-container ul li:nth-child(even) {
+  background-color: rgb(226, 226, 226);
+}
+ul li:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.list-container li {
+  list-style-type: none;
+}
+
+.list-container ul {
+  margin-left: 0;
+  padding-left: 0;
+}
