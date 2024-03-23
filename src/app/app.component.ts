@@ -12,6 +12,20 @@ import { TASKS } from './task';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+searchFilter(title: string) {
+  if (title == "") {
+    this.list.tasks = TASKS;
+  } else {
+    this.list.tasks = TASKS.filter(x => x.name.toLowerCase().includes(title.toLowerCase()));
+  }
+}
+filterTasks(isImportant: boolean) {
+  if (isImportant === true){
+    this.list.tasks = TASKS.filter(x => x.isImportant === true);
+  } else {
+    this.list.tasks = TASKS;
+  }
+}
   list: IList = {
     title: "My To Do List",
     tasks: [] = TASKS

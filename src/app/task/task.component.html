@@ -1,5 +1,5 @@
 <div class="task-container">
-    <div>
+    <div (click)="setCheckedUnchecked()">
         <img *ngIf="task.isChecked" src="../../assets/checked_16.png" alt="">
         <img *ngIf="!task.isChecked" src="../../assets/unchecked_16.png" alt="">
     </div>
@@ -10,4 +10,7 @@
     </div>
     <div [ngClass]="{'text-strikethrough': task.isChecked}">{{task.name}}</div>
     <div *ngIf="task.expirationDate != null" class="expirationDate">{{task.expirationDate | date: 'dd.MM.yyyy'}}</div>
+    <button class="delete-btn" type="button" (click)="removeTask">
+        <mat-icon (click)="removeTask()">delete</mat-icon>
+    </button>
 </div>

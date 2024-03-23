@@ -39,3 +39,18 @@ ul li:last-child {
   margin-left: 0;
   padding-left: 0;
 }
+
+.list-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  background-color:rgb(105, 149, 163);
+  border-radius: 10px;
+}
+
+.icon-label-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

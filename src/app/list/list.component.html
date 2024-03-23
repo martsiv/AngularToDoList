@@ -1,9 +1,24 @@
 <h2>{{list.title}}</h2>
 <div class="list-container">
+    <div class="list-menu">
+        <div class="icon-label-container" (click)="sortByDate()">
+            <mat-icon>sort</mat-icon>
+            <label>Sort by date</label>
+        </div>
+        <div class="icon-label-container" (click)="filterTasks()">
+            <mat-icon>playlist_add_check</mat-icon>
+            <label>Filter by important</label>
+        </div>
+        <div class="icon-label-container">
+            <mat-icon>search</mat-icon>
+            <input type="text" name="search-field" id="find-by-title" [(ngModel)]="searchTerm" (keyup.enter)="searchByTitle()">
+            <label>Search by title</label>
+        </div>
+    </div>
     <ul>
         @for (task of list.tasks; track task.id) {
             <li>
-                <app-task [task]="task"></app-task>
+                <app-task [task]="task" (removeEvent)="removeTask($event)"></app-task>
             </li>
             } @empty {
             <li>Empty task</li>

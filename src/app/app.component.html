@@ -1,1 +1,1 @@
-<app-list [list]="list"></app-list>
+<app-list [list]="list" (filterEvent)="filterTasks($event)" (searchEvent)="searchFilter($event)"></app-list>
