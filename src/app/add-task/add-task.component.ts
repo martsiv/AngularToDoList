@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ITask } from '../task';
 
 @Component({
@@ -15,16 +15,21 @@ export class AddTaskComponent {
   // reactive form
   taskForm = this.formBuilder.group({
     id: [0],
-    name: [''],
+    name: ['', [Validators.required, Validators.minLength(4)]],
     isChecked: [false],
-    isImportant: [false],
-    expirationDate: [new Date()]
+    isImportant: [false, Validators.required],
+    expirationDate: [new Date(), Validators.required]
   });
 
   @Output()
     createEvent = new EventEmitter<ITask>();
 
   onSubmit(): void {
+    if (!this.taskForm.valid) {
+      alert("Invalid data!");
+      return;
+    }
+    
     this.createEvent.emit(this.taskForm.value as ITask);
   }
 }
