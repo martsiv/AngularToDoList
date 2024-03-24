@@ -1,0 +1,21 @@
+<!-- <form formGroupName="taskForm" (submit)="create()"> -->
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <label>
+        <span>Name:</span>
+        <input formControlName="name" type="text">
+    </label>
+    <div class="form-container">
+        <label>
+            <span>Check Important</span>
+            <input formControlName="isImportant" type="checkbox">
+        </label>
+        <label>
+            <span>Expiration Date</span>
+            <input formControlName="expirationDate" type="date">
+        </label>
+    </div>
+    <div class="form-container">
+        <button type="submit">Add</button>
+        <button type="reset">Cancel</button>
+    </div>
+</form>

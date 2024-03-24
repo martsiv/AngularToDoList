@@ -61,12 +61,12 @@ export class ListComponent {
   @Output()
     searchEvent = new EventEmitter<string>();
 
-  filterTasks() {
+  filterTasks(): void {
     this.filtered = !this.filtered;
     this.filterEvent.emit(this.filtered);
   }
   searchTerm: string = "";
-  searchByTitle() {
+  searchByTitle(): void {
     this.searchEvent.emit(this.searchTerm);
   }
 }

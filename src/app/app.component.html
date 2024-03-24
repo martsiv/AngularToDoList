@@ -1,1 +1,4 @@
-<app-list [list]="list" (filterEvent)="filterTasks($event)" (searchEvent)="searchFilter($event)"></app-list>
+<div>
+    <app-add-task (createEvent)="addTask($event)"></app-add-task>
+    <app-list [list]="list" (filterEvent)="filterTasks($event)" (searchEvent)="searchFilter($event)"></app-list>
+</div>

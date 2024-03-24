@@ -33,11 +33,11 @@ export class TaskComponent {
   @Output()
   removeEvent = new EventEmitter<number>();
 
-  setCheckedUnchecked() {
+  setCheckedUnchecked(): void {
     this.task.isChecked = !this.task.isChecked;
   }
 
-  removeTask() {
+  removeTask(): void {
     this.removeEvent.emit(this.task.id);
   }
 }
